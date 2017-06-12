@@ -1,6 +1,6 @@
 user = 'David Beckham'
 
-demo = [["Welcome "+ user + "! Let us begin the game."], ["The different types of effects you can achieve"], ["by using This software is demonstrated here."], ["you might be wondering"], ["whether you can use only a single line."], ["NO! Multiple lines of code are possible.", "All you need to do is to provide", "several lines of text strings", "within the same list"], ["The text file in the text_factory folder", "contains all the instructions necessary", "to run this program.", "you can easily incorporate", "it in your game or any other programe", "where you would like to have","a fancy text display."], ["when learning Python I sometimes found that", "most modules did not have", "a good help file", "or a demo highlighting the abilities", "of the program.", "That is why I decided","to incorporate a detailed help text file", "and a demo with all the possible routines."]]
+demo = [["Welcome "+ user + "! Let us begin the game."], ["Oh would you look at that!"],["It's time for your daily exercise!", "Let us get started with, your daily routine!"], ["Start by stretching", "and making sure you are ready for"," an intense workout"], ["start by jumping up and down on one foot", "alternating your foot each time"], ["Now pretend you are playing basketball"], ["Now stop and sit criss cross applesauce.", "And raise your hand ", "as if you were still in third grade. ", "and yell 'I love myself'"], ["Now do your favorite yoga stretch!", "And say 'Ummmm' 'Ummmmm' three times.", "And take a deep breath", "Because now comes the crazy part...", "it in your game or any other programe", "where you would like to have","a fancy text display."], ["when learning Python I sometimes found that", "most modules did not have", "a good help file", "or a demo highlighting the abilities", "of the program.", "That is why I decided","to incorporate a detailed help text file", "and a demo with all the possible routines."]]
 import pygame
 from pygame.locals import KEYDOWN, K_ESCAPE, RLEACCEL
 from text_factory import Text_Factory
@@ -32,7 +32,7 @@ for num, item in enumerate(flist):
     efx0 = renderedfont.render(str(num), True, col2, black)
 
     txt1 = renderedfont.render("  zoom = ", True, col1, black)
-    if item[0] == None:
+    """if item[0] == None:
         efx1 = renderedfont.render(str(item[0]), True, grey, black)
     else:
         efx1 = renderedfont.render(str(item[0]), True, col2, black)
@@ -53,7 +53,20 @@ for num, item in enumerate(flist):
     if item[3] == None:
         efx4 = renderedfont.render(str(item[3]), True, grey, black)
     else:
-        efx4 = renderedfont.render(str(item[3]), True, col2, black)
+        efx4 = renderedfont.render(str(item[3]), True, col2, black)"""
+
+    efx1 = renderedfont.render(str(item[0]), True, grey, black)
+
+    txt2 = renderedfont.render("  fade = ", True, col1, black)
+
+    efx2 = renderedfont.render(str(item[2]), True, black, black)
+
+    txt3 = renderedfont.render("  fade = ", True, col1, black)
+    efx3 = renderedfont.render(str(item[2]), True, black, black)
+
+    txt4 = renderedfont.render("  slide = ", True, col1, black)
+    efx4 = renderedfont.render(str(item[3]), True, black, black)
+
 
     efximgs= [txt0, efx0, txt1, efx1, txt2, efx2, txt3, efx3, txt4, efx4]
 

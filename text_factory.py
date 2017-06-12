@@ -27,7 +27,7 @@ class Sliders(pygame.sprite.DirtySprite):
         self.num = -1
         self.xadd = 0  # the number to add to move in x direction
         self.yadd = 0  # the number to add to move in y direction
-        self.delay = 0  # after how long the obj starts moving
+        self.delay = 20  # after how long the obj starts moving
 
     #---------------------------------------------------------------------------
 
@@ -36,10 +36,10 @@ class Sliders(pygame.sprite.DirtySprite):
         self.length = len(self.images) - 1
 
         if self.delay > 0:
-            self.delay -= 1
+            self.delay -= 3
 
         if self.delay <= 0:
-            self.delay = 0
+            self.delay = 3
             self.frame += 1
 
             if self.frame >= self.length:
@@ -79,13 +79,13 @@ class Text_Factory():
                 xpos = random.randint(0, 800)
                 ypos = random.randint(0, 600)
 
-                pygame.draw.circle(self.screen, (random.randint(10, 70), random.randint(20, 80), 60), (xpos, ypos), random.randint(10, 40), 0)
+                #pygame.draw.circle(self.screen, (random.randint(10, 70), random.randint(20, 80), 60), (xpos, ypos), random.randint(10, 40), 0)
 
         self.back = self.screen.subsurface(self.screen.get_rect()).convert()
 
         self.screen.blit(self.back, (0, 0))
 
-        pygame.display.set_caption("Pygame Text Demo by Diliup Gabadamudalige")
+        pygame.display.set_caption("Magic Mirror: Created by Eddie Tapia")
 
         self.subsurface = None
         self.background = (0, 0, 0)
@@ -765,10 +765,43 @@ class Text_Factory():
 
     #---------------------------------------------------------------------------
 
+def run_text():
+    tf = Text_Factory()
+     
+    tf.run(zoom = "out", colour= (255,255,255), rotate = None, fade = None, slide = None, message = ["Welcome!!!"," ", "Oh would you look at that!", "It's time for your daily exercise!", "Let us get started with, a routine!"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["Start by stretching"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["and make sure you are ready", "for an intense workout"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["Start by jumping up ", "and down on one foot"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "right", fade = None, slide = None, message = ["alternating your foot each time"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["Now pretend you are playing basketball"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["And pretend you just made", "a three pointer to win", "the NBA championship!"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "left", fade = None, slide = None, message = ["Now stop and sit criss cross applesauce."])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["And raise your hand", "as if you were about"," to ask a question"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "left", fade = None, slide = None, message = ["and yell"," 'I love myselfffff!!!'"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["Now do your favorite yoga stretch!"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["And say 'Ummmm' 'Ummmmm' a couple times."])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["And take a deep breath..."])
+    tf.run(zoom = "out", colour= (255,255,255), rotate = None, fade = None, slide = None, message = ["Because now comes the crazy part..."])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "right", fade = None, slide = None, message = ["Are you ready????"])
+    tf.run(zoom = "out", colour= (255,255,255), rotate = None, fade = None, slide = None, message = ["Just kidding... ", "The workout has ended and you ", "have an upcoming event on your calendar", "Have a great day:)"])
+
 if __name__ == '__main__':
 
     tf = Text_Factory()
 
-    tf.run(zoom = "out", rotate = None, fade = None, slide = None, message = ["I am sliding in first", "I'm second slider", "me the third", "fourth liner", "pasweniya"])
-
-    tf.run(zoom = "out", rotate = None, fade = None, slide = "out left", message = ["I am sliding in first", "I'm second slider", "me the third", "fourth liner", "pasweniya"])
+    tf.run(zoom = "out", colour= (255,255,255), rotate = None, fade = None, slide = None, message = ["Welcome!!!"," ", "Oh would you look at that!", "It's time for your daily exercise!", "Let us get started with, a routine!"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["Start by stretching"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["and make sure you are ready", "for an intense workout"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["Start by jumping up ", "and down on one foot"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "right", fade = None, slide = None, message = ["alternating your foot each time"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["Now pretend you are playing basketball"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["And pretend you just made", "a three pointer to win", "the NBA championship!"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "left", fade = None, slide = None, message = ["Now stop and sit criss cross applesauce."])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out right", message = ["And raise your hand", "as if you were about"," to ask a question"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "left", fade = None, slide = None, message = ["and yell"," 'I love myselfffff!!!'"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["Now do your favorite yoga stretch!"])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["And say 'Ummmm' 'Ummmmm' a couple times."])
+    tf.run(zoom = None, colour= (255,255,255), rotate = None, fade = None, slide = "out left", message = ["And take a deep breath..."])
+    tf.run(zoom = "out", colour= (255,255,255), rotate = None, fade = None, slide = None, message = ["Because now comes the crazy part..."])
+    tf.run(zoom = None, colour= (255,255,255), rotate = "right", fade = None, slide = None, message = ["Are you ready????"])
+    tf.run(zoom = "out", colour= (255,255,255), rotate = None, fade = None, slide = None, message = ["Just kidding... ", "The workout has ended and you ", "have an upcoming event on your calendar", "Have a great day:)"])
